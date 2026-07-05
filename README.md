@@ -1,9 +1,9 @@
-☆☆ Global Weather Repository — EDA Summary ☆☆
+☆☆ **Global Weather Repository** ☆☆
 
-▷ ## What this project does
+▷ **What this project does**
 An exploratory data analysis of the [Global Weather Repository](https://www.kaggle.com/datasets/nelgiriyewithana/global-weather-repository) dataset from Kaggle — 145,785 rows across 41 columns covering weather, atmospheric, and air-quality readings for locations worldwide.
 
-▷ ## Pipeline
+▷ **Pipeline:**
 
 **1. Load & Inspect** — Read the CSV, checked shape, dtypes, and summary statistics (`.info()`, `.describe()`, `.isnull().sum()`).
 
@@ -24,14 +24,14 @@ An exploratory data analysis of the [Global Weather Repository](https://www.kagg
 - An interactive Folium map with color-coded markers (blue/green/orange/red by temperature band) for every location's latest reading.
 - A Plotly choropleth showing average temperature by country, based on each location's most recent reading.
 
-▷ ## Key findings
+▷ **Key findings:**
 
 - **Temperature vs. feels-like temperature are near-perfectly correlated** (r ≈ 0.98), as expected physically.
 - **Humidity is negatively correlated with UV index** (r ≈ -0.55) and moderately positively correlated with cloud cover (r ≈ 0.51) — consistent with cloudier, more humid conditions blocking UV.
 - **Air pollutants cluster together**: carbon monoxide, nitrogen dioxide, and sulphur dioxide show moderate positive correlation with each other (r ≈ 0.3–0.6), suggesting shared sources (e.g., traffic/industrial activity) rather than independent phenomena.
 - **The hottest-recorded-temperature ranking is dominated by Gulf and equatorial nations** (Kuwait, Iraq, UAE, Qatar, Saudi Arabia, Djibouti, Chad), which lines up with known climate patterns — except for one outlier (see below).
 
-▷ ## Data quality caveats (worth flagging in the writeup)
+▷ **Data quality caveats:**
 A few sentinel/erroneous values survived cleaning because they aren't technically `NaN`:
 - `air_quality_Carbon_Monoxide` and `air_quality_Sulphur_dioxide` contain **-9999 placeholder values** mixed into otherwise valid readings.
 - `air_quality_PM10` has a **minimum of -1848**, which is physically impossible for a particulate concentration.
@@ -40,7 +40,7 @@ A few sentinel/erroneous values survived cleaning because they aren't technicall
 
 These don't invalidate the overall trends (correlations and typical ranges look sound), but a rigorous next step would be to filter or cap these sentinel/out-of-range values before drawing quantitative conclusions from extremes.
 
-▷ ## Tools used
+▷ **Tools used**
  ⇒ Python Libraries Used (The Tech Stack)
   These are the specialized data science packages we imported into your code cells:
   - pandas: Used for data manipulation, cleaning duplicate rows, and handling missing numbers or text using statistical median/mode imputation.
